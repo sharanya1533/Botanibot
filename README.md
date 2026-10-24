@@ -162,6 +162,9 @@ Live links: backend — [add URL] · frontend — [add URL]
 - Frontend handles loading/empty/error/success states; toasts on all actions;
   401 auto-logout.
 
+- **Garden stats** — watering streak, total litres given, and a rainwater-saved counter from every rain postponement.
+- **Tip of the day** — rotating care tips on the dashboard.
+
 ## Roadmap
 
 - Photo per journal entry.

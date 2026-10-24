@@ -18,6 +18,7 @@ export default function Dashboard() {
   const { user } = useAuth();
   const toast = useToast();
   const [data, setData] = useState(null);
+  const [gstats, setGstats] = useState(null);
   const [error, setError] = useState('');
   const [showAdd, setShowAdd] = useState(false);
   const [species, setSpecies] = useState([]);
@@ -28,7 +29,10 @@ export default function Dashboard() {
     try { setData((await client.get('/dashboard')).data); }
     catch (err) { setError(err.message); }
   }
-  useEffect(() => { load(); }, []);
+  useEffect(() => {
+    load();
+    client.get('/stats/garden').then((r) => setGstats(r.data)).catch(() => {});
+  }, []);
 
   async function water(plant) {
     try {
@@ -71,6 +75,17 @@ export default function Dashboard() {
             + Add plant
           </button>
         </div>
+
+        {gstats && (
+          <div className="mb-6 grid gap-3 sm:grid-cols-4">
+            {[['🔥 Watering streak', `${gstats.streak}d`], ['💧 Water given', `${gstats.totalLitres}L`], ['🌧️ Rainwater saved', `${gstats.rainwaterSavedLitres}L`], ['💡 Tip of the day', gstats.tip]].map(([l, v]) => (
+              <div key={l} className="rounded-3xl border border-sand bg-white p-4">
+                <p className="text-[11px] font-bold uppercase text-stone-400">{l}</p>
+                <p className={`mt-1 ${l.startsWith('💡') ? 'text-sm text-leaf' : 'text-2xl font-bold text-leaf'}`}>{v}</p>
+              </div>
+            ))}
+          </div>
+        )}
 
         {data?.weather && (
           <div className={`mt-6 flex flex-wrap items-center gap-3 rounded-2xl border p-4 ${data.weather.rainAlert ? 'border-sky-300 bg-sky-50' : 'border-sand bg-white'}`}>
