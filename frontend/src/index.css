@@ -12,8 +12,26 @@
 
 body {
   font-family: var(--font-body);
-  background-color: var(--color-cream);
+  background: linear-gradient(170deg, #faf6ee 0%, #f3f0e0 50%, #eaf0dc 100%);
   color: #292524;
+  min-height: 100vh;
 }
 
 h1, h2, h3, .serif { font-family: var(--font-display); }
+
+@keyframes floatY { 0%,100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-16px) rotate(4deg); } }
+@keyframes sway { 0%,100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
+@keyframes marquee { to { transform: translateX(-50%); } }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
+
+.reveal > * { opacity: 0; animation: fadeUp .8s cubic-bezier(.2,.7,.3,1) forwards; }
+.reveal > *:nth-child(1) { animation-delay: .05s } .reveal > *:nth-child(2) { animation-delay: .15s }
+.reveal > *:nth-child(3) { animation-delay: .25s } .reveal > *:nth-child(4) { animation-delay: .35s }
+.reveal > *:nth-child(5) { animation-delay: .45s } .reveal > *:nth-child(6) { animation-delay: .55s }
+
+.leaf-float { animation: floatY 7s ease-in-out infinite; }
+.sway { animation: sway 5s ease-in-out infinite; transform-origin: bottom center; }
+.marquee { display: flex; width: max-content; animation: marquee 30s linear infinite; }
+.hover-lift { transition: transform .35s cubic-bezier(.2,.7,.3,1), box-shadow .35s; }
+.hover-lift:hover { transform: translateY(-8px); box-shadow: 0 24px 44px -18px rgba(77,124,15,.35); }
+.glass { background: rgba(250,246,238,.75); backdrop-filter: blur(14px); border: 1px solid rgba(229,221,200,.8); box-shadow: 0 8px 30px rgba(77,124,15,.08); }
