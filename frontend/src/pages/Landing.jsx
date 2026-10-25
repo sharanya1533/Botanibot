@@ -30,14 +30,14 @@ export default function Landing() {
             skips watering when the sky is about to do it for you.
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
-            <Link to="/register" className="hover-lift rounded-full bg-leaf px-9 py-4 font-medium text-white shadow-xl shadow-leaf/30">Plant your first pot →</Link>
-            <Link to="/login" className="glass rounded-full px-9 py-4 font-medium text-stone-700">I have a garden</Link>
+            <Link to="/register" className="btn-3d hover-lift rounded-full bg-leaf px-9 py-4 font-medium text-white shadow-xl shadow-leaf/30">Plant your first pot →</Link>
+            <Link to="/login" className="btn-3d glass tilt-card rounded-full px-9 py-4 font-medium text-stone-700">I have a garden</Link>
           </div>
         </section>
 
         {/* moisture-ring demo */}
         <section className="reveal mx-auto mb-12 max-w-3xl">
-          <div className="glass rounded-[2.5rem] p-8">
+          <div className="float-3d glass tilt-card rounded-[2.5rem] p-8">
             <p className="serif text-center text-sm italic text-stone-400">today in the garden</p>
             <div className="mt-6 grid grid-cols-3 gap-4 text-center">
               {[
