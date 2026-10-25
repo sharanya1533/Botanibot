@@ -13,6 +13,7 @@ export default function Navbar() {
         </Link>
         <div className="flex items-center gap-3 text-sm">
           {user?.city && <span className="hidden rounded-full bg-leaf-soft px-3 py-1 font-medium text-leaf sm:block">📍 {user.city}</span>}
+          <Link to="/guide" className="rounded-full px-3 py-2 text-sm font-semibold opacity-60 hover:opacity-100">📖 Guide</Link>
           {user ? (
             <button onClick={() => { logout(); navigate('/'); }} className="rounded-full border border-sand px-4 py-1.5 font-medium text-stone-600 hover:border-leaf hover:text-leaf">
               Log out
