@@ -6,6 +6,7 @@ import { Loading, Empty, ErrorState } from '../components/states.jsx';
 import { MoistureRing, dueLabel } from '../components/ui.jsx';
 import { useAuth } from '../context/AuthContext.jsx';
 import { useToast } from '../context/ToastContext.jsx';
+import SceneBackground from '../components/SceneBackground.jsx';
 
 const COLUMNS = [
   ['overdue', 'Overdue', 'border-terra/30 bg-terra/5', 'water now'],
@@ -61,9 +62,10 @@ export default function Dashboard() {
   const total = data ? Object.values(data.counts).reduce((s, n) => s + n, 0) : 0;
 
   return (
-    <div className="min-h-screen">
+    <div className="relative min-h-screen">
       <Navbar />
-      <main className="mx-auto max-w-6xl px-4 py-8">
+      <SceneBackground />
+      <main className="relative mx-auto max-w-6xl px-4 py-8">
         <div className="flex flex-wrap items-end justify-between gap-3">
           <div>
             <h1 className="serif text-3xl font-bold">Today in the garden</h1>
