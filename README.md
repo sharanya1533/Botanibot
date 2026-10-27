@@ -12,6 +12,8 @@ The platform helps users manage their plants, understand their watering requirem
 
 💚 **API Health Check:** https://botanibot.onrender.com/api/health
 
+Video demo link:https://drive.google.com/file/d/1M4r4ecklrwy3ufUMDc3SCJ_Z1zSMzmS2/view?usp=sharing
+
 ---
 
 ## 📑 Table of Contents
