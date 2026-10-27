@@ -6,8 +6,7 @@ BotaniBot is a full-stack web application designed to simplify plant care throug
 
 The platform helps users manage their plants, understand their watering requirements, monitor weather conditions, and maintain healthier plants while avoiding unnecessary water usage.
 
-🌐 **Live Application:** `https://botanibot-frontend.onrender.com`
-
+🌐 **Live Application:** https://botanibot-frontend.onrender.com
 ⚙️ **Backend API:** https://botanibot.onrender.com
 
 💚 **API Health Check:** https://botanibot.onrender.com/api/health
